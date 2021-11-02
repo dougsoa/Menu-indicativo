@@ -8,7 +8,7 @@
   <body>
     <div class="navigation">
       <ul>
-        <li class="list">
+        <li class="list active">
           <a href="#">
             <span class="icon">
               <ion-icon name="home-outline"></ion-icon>
@@ -50,6 +50,16 @@
         </li>
       </ul>
     </div>
+
+    <script>
+      let list = document.querySelectorAll('.list')
+      function serActiveClass() {
+        list.forEach(item => item.classList.remove('active'))
+        this.classList.add('active')
+      }
+      list.forEach(item => item.addEventListener('mouseover', serActiveClass))
+    </script>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
