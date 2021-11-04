@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300,400,500,700display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +25,7 @@ body {
   list-style: none;
   width: 70px;
   height: 70px;
+  z-index: 1;
 }
 .navigation ul li a {
   position: relative;
@@ -36,7 +36,7 @@ body {
   color: #fff;
   text-align: center;
 }
-.navigation ul lia a .icon {
+.navigation ul li a .icon {
   position: relative;
   line-height: 75px;
   transition: 0.5s;
@@ -49,13 +49,47 @@ body {
 .navigation ul li a .text {
   position: absolute;
   font-size: 12px;
-  color: #ff4;
+  color: #fff;
   bottom: 20px;
   font-weight: 400;
   transition: 0.25s;
   text-transform: uppercase;
   transform: scale(0);
 }
-.navigation ul li:hover a .text {
+.navigation ul li.active a .text {
   transform: scale(1);
 }
+.indicator {
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.navigation ul li:nth-child(1).active ~ .indicator {
+  background: #633bf5;
+  box-shadow: 0 15px 25px #633bf5;
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator {
+  background: #2344c9;
+  box-shadow: 0 15px 25px #2344c9;
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator {
+  background: #3bc3f5;
+  box-shadow: 0 15px 25px #3bc3f5;
+  transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator {
+  background: #3bf5a4;
+  box-shadow: 0 15px 25px #3bf5a4;
+  transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator {
+  background: #3bf541;
+  box-shadow: 0 15px 25px #3bf541;
+  transform: translateX(calc(70px * 4));
+}
+
