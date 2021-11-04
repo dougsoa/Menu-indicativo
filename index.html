@@ -48,16 +48,17 @@
             <span class="text">settings</span>
           </a>
         </li>
+        <div class="indicator"></div>
       </ul>
     </div>
 
     <script>
       let list = document.querySelectorAll('.list')
-      function serActiveClass() {
+      function setActiveClass() {
         list.forEach(item => item.classList.remove('active'))
         this.classList.add('active')
       }
-      list.forEach(item => item.addEventListener('mouseover', serActiveClass))
+      list.forEach(item => item.addEventListener('mouseover', setActiveClass))
     </script>
 
     <script
